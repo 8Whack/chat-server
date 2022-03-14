@@ -4,6 +4,7 @@ const controller = require('./controllers/messages_controller');
 const app = express();
 
 app.use(express.json());
+app.use(express.static(__dirname+'/../public/build'));
 
 const url = '/api/messages';
 app.get(url, controller.read);
